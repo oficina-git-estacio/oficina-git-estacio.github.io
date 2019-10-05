@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Arquitetura orientada ao serviço</title>
+</head>
+<body>
+	<p>A arquitetura orientada a serviços (SOA) está conosco há muito tempo. O termo apareceu pela primeira vez em 1998 e, desde então, cresceu em popularidade. Também é ramificado em várias variantes, incluindo arquitetura de microsserviço. Embora os microsserviços dominem o cenário, os relatos da morte de SOA foram extremamente exagerados. Então, vamos ver o que é SOA. Abordaremos por que é um padrão arquitetural que não vai a lugar nenhum. Depois, veremos como você pode aplicar seus conceitos de design ao seu trabalho.</p>
+
+<p>O que é arquitetura orientada a serviços?
+A definição da arquitetura orientada a serviços sempre foi um alvo em movimento. Ele evoluiu por vários anos antes de o The Open Group  publicar um white paper em 2007. Mais tarde, esse documento passou a ser o SOA Source Book . Devido ao seu passado fragmentado, SOA possui mais de uma definição.</p>
+
+<p>SOA De acordo com Hoyle
+A definição de SOA do Open Group é quase uma tautologia. Uma razão para isso é o nome apt da arquitetura orientada a serviços. Outro pode ser a falta de tesauros na sede do The Open Group.</p>
+
+<p>Arquitetura Orientada a Serviços (SOA) é um estilo de arquitetura que oferece suporte à orientação a serviços.</p>
+
+</p>A orientação a serviços é uma maneira de pensar em termos de serviços e desenvolvimento baseado em serviços e nos resultados dos serviços.</p>
+
+<p>Essa definição se originou no departamento de departamento de redundância.</p>
+
+<p>O Open Group diz que um serviço:</p>
+
+<p>É uma representação lógica de uma atividade comercial repetível com um resultado especificado (por exemplo, verificar crédito do cliente, fornecer dados climáticos, consolidar relatórios de perfuração).</p>
+É independente.
+<p>Pode ser composto por outros serviços (a ênfase é deles).</p>
+<p>Portanto, a SOA separa os processos de negócios em operações discretas. Em seguida, ele cria serviços que executam essas operações.
+
+<p>Os serviços executam tarefas de negócios. Eles são independentes, mas você pode combinar serviços em outros maiores. Os consumidores não precisam saber nada sobre os serviços.</p>
+
+<p>Os serviços executam tarefas de negócios. Eles são independentes, mas você pode combinar serviços em outros maiores. Os consumidores não precisam saber nada sobre os serviços.</p>
+<p>Os serviços executam tarefas de negócios. Eles são independentes, mas você pode combinar serviços em outros maiores. Os consumidores não precisam saber nada sobre os serviços.</p>
+<p>O Open Group vai um pouco mais longe em sua definição. O design deve "refletir as atividades de negócios do mundo real". Você projeta suas operações após os processos de negócios que substitui. Os nomes do serviço devem ser processos, regras ou políticas de negócios.</p>
+
+Na SOA, os serviços se comunicam. Eles fazem isso em um barramento de serviço corporativo (ESB). SOA emprega algo chamado Fluxo de Informações Sem Fronteiras. As mensagens de negócios fluem pelo barramento para que os serviços possam se comunicar e colaborar. Isso requer coordenação significativa e, de acordo com o The Open Group, governança.
+
+SOA é uma arquitetura que funciona para grandes empresas. Ele modela aplicativos após processos de negócios. Em seguida, ele os conecta a um sistema de troca de mensagens onde eles podem colaborar. É um modelo para fazer com que muitos grupos de desenvolvimento trabalhem juntos.
+
+SOA de acordo com todos os outros
+É assim que parece a coisa mais próxima de um padrão para SOA. Então, como é a natureza?
+
+Bem, isto depende.
+
+Em 2005, antes do The Open Group publicar seu livro de origem, Martin Fowler chamou SOA de "ServiceOrientedAmbiguity".
+
+Ouvi pessoas dizerem que o SOA é bom: ele separa dados do processo, combina dados e processos, usa padrões da web, é independente dos padrões da web, é assíncrono, é síncrono, é sincronicidade não importa ...
+
+A arquitetura orientada a serviços é diferente para pessoas diferentes. Nos seus primeiros dias, uma de suas características definidoras era o que não era. SOA é uma alternativa ao padrão do servidor de aplicativos que dominou grande parte dos anos 90. Além disso, como Fowler sugere, a SOA estava nos olhos de quem vê.
+
+E quanto à arquitetura de microsserviços?
+Então, e os microsserviços? Uma arquitetura de microsserviço é um tipo de SOA? Ou é algo completamente diferente? A resposta depende de quem você pergunta.
+
+Ambas as arquiteturas se concentram no conceito de decompor problemas de negócios em serviços. Isso faz com que os dois estilos pareçam semelhantes, mas se você se aprofundar um pouco mais, há diferenças críticas.
+
+O conceito de fluxo de informações sem fronteiras da SOA incentiva o compartilhamento entre serviços. Os serviços compartilham o máximo de informações possível. Eles compartilham componentes de software para manter a consistência e reduzir o esforço de desenvolvimento. É daí que surge a idéia de forte governança centralizada do Open Group.
+
+Fluxos de dados vinculados vs. não vinculados
+Espera-se que os sistemas baseados em microsserviços sejam construídos com o conceito de contexto limitado. Abordamos o contexto limitado anteriormente em um post sobre design orientado a domínio.
+
+Vamos dar uma olhada em como a definimos lá:
+
+Primeiro, os contextos limitados devem conter complexidade. Em outras palavras, podemos criar um contexto limitado para alguma lógica de negócios complexa específica. O contexto limitado se conecta a outros contextos por meio de adaptadores. E esses adaptadores protegem contra alterações. Quando essas complexidades contidas no contexto mudam, o resto do nosso sistema também não precisa mudar. (Enfase adicionada)
+
+Os contextos limitados existem para conter a complexidade. Eles protegem os serviços fora do contexto das mudanças. É o oposto do fluxo de informações sem fronteiras.
+
+Os relacionamentos entre serviços e clientes são definidos explicitamente. Ao mesmo tempo, os serviços se comunicam o menos possível. Os serviços raramente compartilham componentes em uma arquitetura de microsserviço.
+
+Essa diferença vai além do design. Os microsserviços gerenciam a colaboração entre as equipes de desenvolvimento, isolando as preocupações. SOA faz isso expondo-os. O Open Group exige uma forte governança para sistemas SOA. Se você cria um sistema corporativo que compartilha dados entre departamentos, é necessário. Os microsserviços evitam isso com o contexto delimitado. As equipes de desenvolvimento podem trabalhar dentro de suas interfaces definidas, sem controle centralizado.
+
+Principais características de uma arquitetura SOA
+Então é isso que SOA não é. O que é e como você pode usá-lo?
+
+Composição do Serviço
+Vamos voltar para onde começamos. A arquitetura orientada a serviços trata da resolução de problemas de negócios com serviços. Então, imagine uma vasta loja de comércio eletrônico. Vende várias linhas de produtos que consistem em milhares de produtos cada.
+
+Vinte anos atrás, você pode construí-lo como um único servidor de aplicativos. O servidor de aplicativos se conectaria a um banco de dados relacional. Em seguida, você colocaria a maior parte da lógica de negócios nos procedimentos armazenados nesse banco de dados. Você o implantaria em clusters para garantir a confiabilidade. Qualquer alteração no sistema significaria atualizar os servidores, os bancos de dados ou ambos. Os servidores de aplicativos são rígidos e precisam de muito hardware.
+
+Com a SOA, você divide o sistema em serviços. Por exemplo:
+
+Ponto de venda (POS).
+Processo de pagamento.
+Inventário.
+Atendimento de pedidos.
+Remessa.
+Pode haver diferentes serviços de inventário para cada linha de produtos. Mas, há uma oportunidade significativa para a reutilização de código. O serviço de ponto de venda pode ser um serviço composto. Pode ter um servidor da web para se comunicar com os clientes. Também poderia ter uma interface especializada para receber pedidos por telefone. O serviço de remessa pode ser composto de serviços para UPS, USPS, FedEx e remetentes particulares de produtos exclusivos.
+
+Em vez de usar cluster caro, você executa mais de uma instância de cada serviço. Discutiremos como o ESB torna isso possível abaixo.
+
+Até agora, isso parece muito com como você resolveria esse problema com microsserviços. Mas há uma grande diferença.
+
+O barramento corporativo
+Os serviços se comunicam entre si por um barramento de serviço corporativo (ESB.) Um ESB geralmente é um sistema de mensagens, como JMS, RabbitMQ ou Kafka. O barramento implementa o fluxo de informações sem fronteiras. É onde SOA e microsserviços se separam.
+
+Portanto, em nosso exemplo, o serviço de PDV fala com sistemas de processamento de pagamentos e processamento durante uma venda. O sistema de atendimento se comunica com os serviços de estoque e expedição, e assim por diante. Isso requer coordenação. Os serviços precisam concordar em como representar produtos, vendas e clientes. É aqui que entra a forte governança. Ou é?
+
+Um barramento de mensagens é um mecanismo de dissociação eficaz . A coordenação de mensagens entre serviços ainda é melhor do que serviços monolíticos ou fortemente acoplados. Os desenvolvedores de serviços gravam nos formatos de mensagem acordados. Isso precisa de uma governança forte? Por que as mensagens não podem agir como as APIs RESTful usadas em microsserviços?
+
+Como mencionado acima, um barramento de mensagens suporta tolerância a falhas. Você pode executar mais de uma instância de cada serviço e usar a orquestração para compartilhar a carga. Ou, se ele se adequar melhor ao seu modelo de aplicativo, você poderá executar os serviços no modo de espera ativa.
+
+Uma arquitetura para empresas
+A arquitetura orientada a serviços sobreviveu por um longo tempo por um bom motivo. O modelo de quebra de processos em serviços é sólido e levou a microsserviços. A noção de um barramento de mensagens é boa para empresas que precisam compartilhar dados entre departamentos.
+
+A chamada para uma governança forte pode ser desanimadora para alguns, mas você não precisa dela. Em vez de usar o barramento corporativo como um mecanismo de acoplamento, use-o como um ponto de demarcação. O barramento de mensagens da SOA pode ser uma adição valiosa aos sistemas que precisam trocar dados entre serviços.
+
+</body>
+</html>
